@@ -4,33 +4,39 @@
   <title>WEB - JavaScript</title>
   <meta charset="utf-8">
   <script>
+    var Links = {
+      setColor:function(color){
+        var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color = color;
+          i = i + 1;
+          }
+        }
+      
+      }
+      var Body = {
+        setColor:function(color){
+        document.querySelector('body').style.color = color;
+        },
+        setBackgroundColor:function(color){
+        document.querySelector('body').style.backgroundColor = color;
+        }
+      }
       function nightDayHandler(self){
       var target =document.querySelector('body');
       if(self.value==='night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
+      Body.setBackgroundColor('black');
+      Body.setColor('white');
       self.value = 'day';
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-      console.log(alist[i]);
-      alist[i].style.color = 'powderblue';
-      i = i + 1;
-      }
-    }
-      else{
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
+      Links.setColor('powderblue');
+    } else {
+      Body.setBackgroundColor('white');
+      Body.setColor('black');
       self.value = 'night';
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-      console.log(alist[i]);
-      alist[i].style.color = 'blue';
-      i = i + 1;
-      }
+      Links.setColor('blue');
     }
   }
   </script>
@@ -39,9 +45,9 @@
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
-  nightDayHandler(this)">
-  <input id="night_day" type="button" value="night" onclick="
-  nightDayHandler(this)">
+  nightDayHandler(this);
+  ">
+  
   <div id="grid">
   <ol>
     <li><a href="1.html">HTML</a></li>
