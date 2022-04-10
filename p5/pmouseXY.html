@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    </head>
+    <body>
+        <script>
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            background(220);
+        }
+        function draw() {
+            px = pow(mouseX-pmouseX, 2)
+            py = pow(mouseY-pmouseY, 2)
+            speed = sqrt(px+py);
+            circle(mouseX, mouseY, speed);
+            // line(pmouseX, pmouseY, mouseX, mouseY)
+        }
+        function mousePressed(){
+            background(random(255), random(255), random(255));
+        }
+        </script>
+    </body>
+</html>
