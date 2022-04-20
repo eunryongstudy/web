@@ -1,4 +1,3 @@
-const { request } = require('http');
 var url = require('url');
 var db = require('./db');
 var template = require('./template.js');
@@ -9,6 +8,7 @@ db.query(`SELECT * FROM topic`, function(error,topics){
     var description = 'Hello, Node.js';
     var list = template.list(topics);
     var html = template.HTML(title, list,
+      `<a href=/author>author</a>`,
       `<h2>${title}</h2>${description}`,
       `<a href="/create">create</a>`
     );
