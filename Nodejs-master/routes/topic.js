@@ -23,7 +23,7 @@ var template = require('../lib/template.js');
     response.send(html);
   });
    
-  router.post('/topic/create_process', function(request, response){
+  router.post('/create_process', function(request, response){
     var post = request.body;
     var title = post.title;
     var description = post.description;
@@ -32,7 +32,7 @@ var template = require('../lib/template.js');
     });
   });
    
-  router.get('/topic/update/:pageId', function(request, response){
+  router.get('/update/:pageId', function(request, response){
     var filteredId = path.parse(request.params.pageId).base;
     fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
       var title = request.params.pageId;
@@ -56,7 +56,7 @@ var template = require('../lib/template.js');
     });
   });
    
-  router.post('/topic/update_process', function(request, response){
+  router.post('/update_process', function(request, response){
     var post = request.body;
     var id = post.id;
     var title = post.title;
@@ -68,7 +68,7 @@ var template = require('../lib/template.js');
     });
   });
    
-  router.post('/topic/delete_process', function(request, response){
+  router.post('/delete_process', function(request, response){
     var post = request.body;
     var id = post.id;
     var filteredId = path.parse(id).base;

@@ -5,7 +5,10 @@ var bodyParser = require('body-parser');
 var compression = require('compression')
 var template = require('./lib/template.js');
 var topicRouter = require('./routes/topic');
+var helmet = require('helmet')
 
+
+app.use(helmet());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(compression());
