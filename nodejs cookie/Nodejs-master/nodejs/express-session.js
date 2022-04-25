@@ -1,13 +1,16 @@
 var express = require('express')
 var parseurl = require('parseurl')
 var session = require('express-session')
+var Filestore = require('session-file-store')(session)
+
   
 var app = express()
   
 app.use(session({
   secret: 'dsaet53!$eq14',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store:new Filestore()
 }))
   
   
