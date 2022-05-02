@@ -6,11 +6,6 @@ var sanitizeHtml = require('sanitize-html');
 var template = require('../lib/template.js');
 const req = require('express/lib/request');
 
-var authData = {
-  email:'eunryong45@gmail.com',
-  password:'111111',
-  nickname:'eunryong'
-}
    
   router.get('/login', function(request, response){
     var title = 'WEB - login';
@@ -28,7 +23,7 @@ var authData = {
     `, '');
     response.send(html);
   });
-   
+  /*
   router.post('/login_process', function(request, response){
     var post = request.body;
     var email = post.email;
@@ -45,6 +40,7 @@ var authData = {
     }
     
   });
+  */
 
   router.get('/logout', function(request, response){
     request.session.destroy(function(err){

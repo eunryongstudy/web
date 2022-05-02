@@ -18,4 +18,5 @@ var auth = require('../lib/auth')
         ); 
         response.send(html);
     });
-    module.exports = router;
+
+module.exports = router;
